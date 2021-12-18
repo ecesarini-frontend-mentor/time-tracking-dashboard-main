@@ -11,6 +11,7 @@
   
   <title>Frontend Mentor | Time tracking dashboard</title>
 
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -27,11 +28,15 @@
     --dark-blue: hsl(235, 46%, 20%);
     --desaturated-blue: hsl(235, 45%, 61%);
     --pale-blue: hsl(236, 100%, 87%);
+
+    --border-radius: 15px;
   }
+  /*html {
+    height: 100%;  
+  }*/
   body {
     box-sizing: content-box;
-    font-size: 18px;
-    margin: 0%;
+    margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
@@ -41,84 +46,134 @@
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    font-family: 'Kumbh Sans', sans-serif;
-    font-size: 12px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    background-color: var(--very-dark-blue);
   }
-
+  ul {
+    list-style: none;
+  }
+  
   .grid-container {
+    padding: 20px;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1vh 3vw;
+  }
+  .grid-element {
+    background-color: var(--dark-blue);
+    border-radius: var(--border-radius);
+  }
+  .grid-element-profile {
+    grid-row: 1 / 3;
+  }
+
+  .fb-profile {
+    display: flex;
+    flex-direction: column;
+  }
+  .fb-profile .fb-profile-avatar {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+    background-color: var(--blue);
+    border-radius: var(--border-radius);
+  }
+  .grid-padding {
+    padding: 20px;
+  }
+  .fb-profile-avatar img {
+    max-width: 40%;
+    border: 2px solid white;
+    border-radius: 50px 50px;
   }
   </style>
 </head>
 <body>
-  <div class="grid-container">
-    <div class="grid-col grid-col-1">
-      <div class="grid-col-1-fb">
-        <div class="grid-col-1-fb-profile">
-          <img class="avatar" src="images/image-jeremy.png"/>
-          <h5>Report for</h5>
-          <h2>Jeremy Robson</h2>
-        </div>
-        <div class="grid-col-1-fb-occurences">
-          <p>Daily</p>
-          <p>Weekly</p>
-          <p>Monthly</p>
+  <main>
+    <div class="grid-container">
+      <div class="grid-element grid-element-profile">
+        <div class="fb-profile">
+          <div class="fb-profile-avatar grid-padding">
+            <img class="avatar" src="images/image-jeremy.png"/>
+            <h5>Report for</h5>
+            <h3>Jeremy Robson</h3>
+          </div>
+          <ul class="fb-profile-intervals grid-padding">
+            <li>Daily</li>
+            <li>Weekly</li>
+            <li>Monthly</li>
+          </ul>
         </div>
       </div>
+      <div class="grid-element grid-element-work grid-padding">
+        <div class="fb-status">
+          <div class="fb-status-bg status-ico-work"><img src="images/icon-work.svg"/></div>
+           <ul class="fb-status-intervals"> 
+            <li>Work</li>
+            <li>5hrs <!-- daily -->
+                Previous - 7hrs <!-- daily -->
+            </li>
+            <li>
+                32hrs <!-- weekly -->
+                Previous - 36hrs <!-- weekly -->
+            </li>
+            <li>103hrs <!-- monthly -->
+                Previous - 128hrs <!-- monthly -->
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid-element grid-element-play grid-padding">
+        Play
+        1hr <!-- daily -->
+        Previous - 2hrs <!-- daily -->
+        10hrs <!-- weekly -->
+        Previous - 8hrs <!-- weekly -->
+        23hrs <!-- monthly -->
+        Previous - 29hrs <!-- monthly -->
+      </div>
+      <div class="grid-element grid-element-study grid-padding">
+        Study
+        0hrs <!-- daily -->
+        Previous - 1hr <!-- daily -->
+        4hrs <!-- weekly -->
+        Previous - 7hrs <!-- weekly -->
+        13hrs <!-- monthly -->
+        Previous - 19hrs <!-- monthly -->
+      </div>
+      <div class="grid-element grid-element-exercise grid-padding">
+        Exercise
+        1hr <!-- daily -->
+        Previous - 1hr <!-- daily -->
+        4hrs <!-- weekly -->
+        Previous - 5hrs <!-- weekly -->
+        11hrs <!-- monthly -->
+        Previous - 18hrs <!-- monthly -->
+      </div>
+      <div class="grid-element grid-element-social grid-padding">
+        Social
+        1hr <!-- daily -->
+        Previous - 3hrs <!-- daily -->
+        5hrs <!-- weekly -->
+        Previous - 10hrs <!-- weekly -->
+        21hrs <!-- monthly -->
+        Previous - 23hrs <!-- monthly -->
+      </div>
+      <div class="grid-element grid-element-selfcare grid-padding">
+        Self Care
+        0hrs <!-- daily -->
+        Previous - 1hr <!-- daily -->
+        2hrs <!-- weekly -->
+        Previous - 2hrs <!-- weekly -->
+        7hrs <!-- monthly -->
+        Previous - 11hrs <!-- monthly -->
+      </div>
     </div>
-    <div class="grid-col">
-      Work
-      5hrs <!-- daily -->
-      Previous - 7hrs <!-- daily -->
-      32hrs <!-- weekly -->
-      Previous - 36hrs <!-- weekly -->
-      103hrs <!-- monthly -->
-      Previous - 128hrs <!-- monthly -->
-
-      Play
-      1hr <!-- daily -->
-      Previous - 2hrs <!-- daily -->
-      10hrs <!-- weekly -->
-      Previous - 8hrs <!-- weekly -->
-      23hrs <!-- monthly -->
-      Previous - 29hrs <!-- monthly -->
-
-      Study
-      0hrs <!-- daily -->
-      Previous - 1hr <!-- daily -->
-      4hrs <!-- weekly -->
-      Previous - 7hrs <!-- weekly -->
-      13hrs <!-- monthly -->
-      Previous - 19hrs <!-- monthly -->
-
-      Exercise
-      1hr <!-- daily -->
-      Previous - 1hr <!-- daily -->
-      4hrs <!-- weekly -->
-      Previous - 5hrs <!-- weekly -->
-      11hrs <!-- monthly -->
-      Previous - 18hrs <!-- monthly -->
-
-      Social
-      1hr <!-- daily -->
-      Previous - 3hrs <!-- daily -->
-      5hrs <!-- weekly -->
-      Previous - 10hrs <!-- weekly -->
-      21hrs <!-- monthly -->
-      Previous - 23hrs <!-- monthly -->
-
-      Self Care
-      0hrs <!-- daily -->
-      Previous - 1hr <!-- daily -->
-      2hrs <!-- weekly -->
-      Previous - 2hrs <!-- weekly -->
-      7hrs <!-- monthly -->
-      Previous - 11hrs <!-- monthly -->
-    </div>
-  </div>
-  
+  </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
