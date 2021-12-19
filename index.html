@@ -31,21 +31,22 @@
 
     --border-radius: 15px;
   }
-  /*html {
-    height: 100%;  
+/*  html {
+    width: 100vw;
+    height: 100vh;
+    max-width: 1440px;  
   }*/
   body {
-    box-sizing: content-box;
-    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--very-dark-blue);
+    margin: 0 auto;
     padding: 0;
-    width: 100%;
-    height: 100%;
   }
   main {
-    height: 100%;
     width: 100%;
-    max-width: 1440px;
+    height: 100%;
     margin: 0 auto;
+    max-width: 1440px;
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
     font-weight: 300;
@@ -57,7 +58,7 @@
   }
   
   .grid-container {
-    padding: 20px;
+    margin: 25% 11%;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -67,29 +68,39 @@
     background-color: var(--dark-blue);
     border-radius: var(--border-radius);
   }
+  .grid-padding {
+    padding: 20px;
+  }
   .grid-element-profile {
     grid-row: 1 / 3;
   }
 
   .fb-profile {
+    height: 100%;
     display: flex;
     flex-direction: column;
   }
   .fb-profile .fb-profile-avatar {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    flex-basis: 70%;
+    flex-basis: 55%;
     background-color: var(--blue);
     border-radius: var(--border-radius);
-  }
-  .grid-padding {
-    padding: 20px;
   }
   .fb-profile-avatar img {
     max-width: 40%;
     border: 2px solid white;
     border-radius: 50px 50px;
   }
+  .fb-profile .fb-profile-intervals {
+    display: flex;
+    flex-direction: column;
+  }
+  /*.fb-action {
+    display: flex;
+    flex-direction: column;
+  }*/
   </style>
 </head>
 <body>
@@ -110,22 +121,20 @@
         </div>
       </div>
       <div class="grid-element grid-element-work grid-padding">
-        <div class="fb-status">
-          <div class="fb-status-bg status-ico-work"><img src="images/icon-work.svg"/></div>
-           <ul class="fb-status-intervals"> 
-            <li>Work</li>
-            <li>5hrs <!-- daily -->
-                Previous - 7hrs <!-- daily -->
-            </li>
-            <li>
-                32hrs <!-- weekly -->
-                Previous - 36hrs <!-- weekly -->
-            </li>
-            <li>103hrs <!-- monthly -->
-                Previous - 128hrs <!-- monthly -->
-            </li>
-          </ul>
-        </div>
+        <div class="fb-ico-bg"><img src="images/icon-work.svg"/></div>
+        <ul class="fb-action fb-work"> 
+          <li>Work</li>
+          <li>5hrs <!-- daily -->
+              Previous - 7hrs <!-- daily -->
+          </li>
+          <li>
+              32hrs <!-- weekly -->
+              Previous - 36hrs <!-- weekly -->
+          </li>
+          <li>103hrs <!-- monthly -->
+              Previous - 128hrs <!-- monthly -->
+          </li>
+        </ul>
       </div>
       <div class="grid-element grid-element-play grid-padding">
         Play
