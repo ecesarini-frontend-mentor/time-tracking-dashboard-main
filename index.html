@@ -30,35 +30,35 @@
     --pale-blue: hsl(236, 100%, 87%);
 
     --border-radius: 15px;
+    --view-height: 1024px;
   }
   html {
-    width: 1440px;
-    height: 1024px;
-    max-width: 1440px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 100%;
+    max-height: var(--view-height);
   }
   body {
-    background-color: var(--very-dark-blue);
     margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
-    width: 1440px;
-    height: 1024px;
-    max-width: 1440px;  
+    background-color: var(--very-dark-blue);
   }
   main {
-    margin: 0 auto;
+    height: 100%;
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
     font-weight: 300;
     color: white;
-    background-color: var(--very-dark-blue);
+    width: 1440px;
+    max-width: 1440px;
   }
   ul {
     list-style: none;
   }
   
-  #grid-container-main .grid-container {
-    margin: 24% 11% 24% 11%;
+  .grid-container {
+    margin: calc( .21*var(--view-height)) 11%;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -105,7 +105,6 @@
 </head>
 <body>
   <main>
-    <div id="grid-container-main">
     <div class="grid-container">
       <div class="grid-element grid-element-profile">
         <div class="fb-profile">
@@ -183,11 +182,10 @@
         Previous - 11hrs <!-- monthly -->
       </div>
     </div>
-    </div>
   </main>
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </footer>
 </body>
 </html>
