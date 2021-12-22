@@ -30,19 +30,20 @@
     --pale-blue: hsl(236, 100%, 87%);
 
     --border-radius: 15px;
+    --view-width: 1440px;
     --view-height: 1024px;
   }
   html {
     box-sizing: border-box;
+    height: var(--view-height);
     margin: 0;
     padding: 0;
     border: 0;
-    height: 100%;
-    max-height: var(--view-height);
   }
   body {
     margin: 0 auto;
     background-color: var(--very-dark-blue);
+    height: 100%;
   }
   main {
     height: 100%;
@@ -50,11 +51,12 @@
     font-size: 18px;
     font-weight: 300;
     color: white;
-    width: 1440px;
-    max-width: 1440px;
+    width: var(--view-width);
+    max-width: var(--view-weight);
   }
   ul {
     list-style: none;
+    margin: 0;
   }
   
   .grid-container {
@@ -64,7 +66,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1vh 3vw;
   }
-  .grid-element {
+  .grid-element.grid-element-profile {
     background-color: var(--dark-blue);
     border-radius: var(--border-radius);
   }
@@ -97,10 +99,35 @@
     display: flex;
     flex-direction: column;
   }
-  /*.fb-action {
+  
+  .fb-ico-bg {
+    position: relative;
+    height: 20%;
+    background-color: var(--light-red-work);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  .fb-ico-bg::before {
+    content: "";
+    position: absolute;
+    height: var(--border-radius);
+    width: var(--border-radius);
+
+  }
+  .fb-ico-bg img {
+    width: 25%;
+    float: right;
+    margin: -10px 20px 0 0;
+  }
+
+  .fb-action {
     display: flex;
     flex-direction: column;
-  }*/
+    background-color: var(--dark-blue);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
   </style>
 </head>
 <body>
@@ -120,9 +147,9 @@
           </ul>
         </div>
       </div>
-      <div class="grid-element grid-element-work grid-padding">
+      <div id="work" class="grid-element">
         <div class="fb-ico-bg"><img src="images/icon-work.svg"/></div>
-        <ul class="fb-action fb-work"> 
+        <ul class="fb-action fb-work grid-padding"> 
           <li>Work</li>
           <li>5hrs <!-- daily -->
               Previous - 7hrs <!-- daily -->
