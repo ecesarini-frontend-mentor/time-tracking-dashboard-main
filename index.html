@@ -102,30 +102,42 @@
   
   .fb-ico-bg {
     position: relative;
-    height: 20%;
-    background-color: var(--light-red-work);
+    height: 30%;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     overflow: hidden;
     vertical-align: middle;
   }
-  .fb-ico-bg::before {
-    content: "";
-    position: absolute;
-    height: var(--border-radius);
-    width: var(--border-radius);
-
+  #work .fb-ico-bg {
+    background-color: var(--light-red-work);
   }
+  #play .fb-ico-bg {
+    background-color: var(--soft-blue-play);
+  }
+  #study .fb-ico-bg {
+    background-color: var(--light-red-study);
+  }
+  #exercise .fb-ico-bg {
+    background-color: var(--lime-green-exercise);
+  }
+  #social .fb-ico-bg {
+    background-color: var(--violet-social);
+  }
+  #self-care .fb-ico-bg {
+    background-color: var(--soft-orange-self-care);
+  }
+  
   .fb-ico-bg img {
     width: 25%;
     float: right;
     margin: -10px 20px 0 0;
   }
-
-  .fb-action {
+  .fb-action {    
+    position: relative;
+    top: -15px;
     display: flex;
     flex-direction: column;
     background-color: var(--dark-blue);
-    border-radius: var(--border-radius);
+    border-radius: 10px 10px var(--border-radius) var(--border-radius);
     overflow: hidden;
   }
   </style>
@@ -163,16 +175,24 @@
           </li>
         </ul>
       </div>
-      <div class="grid-element grid-element-play grid-padding">
-        Play
-        1hr <!-- daily -->
-        Previous - 2hrs <!-- daily -->
-        10hrs <!-- weekly -->
-        Previous - 8hrs <!-- weekly -->
-        23hrs <!-- monthly -->
-        Previous - 29hrs <!-- monthly -->
+      <div id="play" class="grid-element">
+        <div class="fb-ico-bg"><img src="images/icon-play.svg"></div>
+        <ul class="fb-action fb-play grid-padding">
+          <li>Play</li>
+          <li>1hr <!-- daily -->
+              Previous - 2hrs <!-- daily -->
+          </li>
+          <li>10hrs <!-- weekly -->
+              Previous - 8hrs <!-- weekly -->
+          </li>
+          <li>23hrs <!-- monthly -->
+              Previous - 29hrs <!-- monthly -->
+          </li>
+        </ul>
       </div>
-      <div class="grid-element grid-element-study grid-padding">
+      <div id="study" class="grid-element">
+        <div class="fb-ico-bg"><img src="images/icon-study.svg"></div>
+        <ul class="fb-action fb-study grid-padding">
         Study
         0hrs <!-- daily -->
         Previous - 1hr <!-- daily -->
@@ -180,8 +200,11 @@
         Previous - 7hrs <!-- weekly -->
         13hrs <!-- monthly -->
         Previous - 19hrs <!-- monthly -->
+        </ul>
       </div>
-      <div class="grid-element grid-element-exercise grid-padding">
+      <div id="exercise" class="grid-element">
+        <div class="fb-ico-bg"><img src="images/icon-exercise.svg"></div>
+        <ul class="fb-action fb-exercise grid-padding">
         Exercise
         1hr <!-- daily -->
         Previous - 1hr <!-- daily -->
@@ -189,8 +212,11 @@
         Previous - 5hrs <!-- weekly -->
         11hrs <!-- monthly -->
         Previous - 18hrs <!-- monthly -->
+        </ul>
       </div>
-      <div class="grid-element grid-element-social grid-padding">
+      <div id="social" class="grid-element">
+        <div class="fb-ico-bg"><img src="images/icon-social.svg"></div>
+        <ul class="fb-action fb-social grid-padding">
         Social
         1hr <!-- daily -->
         Previous - 3hrs <!-- daily -->
@@ -198,8 +224,11 @@
         Previous - 10hrs <!-- weekly -->
         21hrs <!-- monthly -->
         Previous - 23hrs <!-- monthly -->
+        </ul>
       </div>
-      <div class="grid-element grid-element-selfcare grid-padding">
+      <div id="self-care" class="grid-element">
+        <div class="fb-ico-bg"><img src="images/icon-self-care.svg"></div>
+        <ul class="fb-action fb-self-care grid-padding">
         Self Care
         0hrs <!-- daily -->
         Previous - 1hr <!-- daily -->
@@ -207,6 +236,7 @@
         Previous - 2hrs <!-- weekly -->
         7hrs <!-- monthly -->
         Previous - 11hrs <!-- monthly -->
+        </ul>
       </div>
     </div>
   </main>
