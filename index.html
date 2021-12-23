@@ -78,26 +78,39 @@
   }
 
   .fb-profile {
-    height: 100%;
     display: flex;
     flex-direction: column;
   }
   .fb-profile .fb-profile-avatar {
-    height: 100%;
     display: flex;
     flex-direction: column;
-    flex-basis: 55%;
+    flex-basis: 5%;
+    justify-content: space-around;
     background-color: var(--blue);
     border-radius: var(--border-radius);
   }
-  .fb-profile-avatar img {
+  .fb-profile-avatar li img {
     max-width: 40%;
     border: 2px solid white;
     border-radius: 50px 50px;
   }
+  .fb-profile-avatar li p:nth-child(1) {
+    color: var(--pale-blue);
+    font-size: 3vh;
+  }
+  .fb-profile-avatar li p:nth-child(2) {
+    font-size: 8vh;
+    margin-top: -10px;
+  }
   .fb-profile .fb-profile-intervals {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .fb-profile .fb-profile-intervals li {
+    font-size: 3vw;
+    color: var(--desaturated-blue);
   }
   
   .fb-ico-bg {
@@ -147,11 +160,13 @@
     <div class="grid-container">
       <div class="grid-element grid-element-profile">
         <div class="fb-profile">
-          <div class="fb-profile-avatar grid-padding">
-            <img class="avatar" src="images/image-jeremy.png"/>
-            <h5>Report for</h5>
-            <h3>Jeremy Robson</h3>
-          </div>
+          <ul class="fb-profile-avatar grid-padding">
+            <li><img src="images/image-jeremy.png"/></li>
+            <li>
+              <p>Report for</p>
+              <p>Jeremy Robson</p>
+            </li>
+          </ul>
           <ul class="fb-profile-intervals grid-padding">
             <li>Daily</li>
             <li>Weekly</li>
