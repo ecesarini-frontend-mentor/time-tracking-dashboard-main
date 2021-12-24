@@ -107,16 +107,10 @@
     flex-direction: column;
     justify-content: space-evenly;
   }
+
   .fb-profile .fb-profile-intervals li {
     font-size: 18px;
     color: var(--desaturated-blue);
-  }
-  .fb-profile-intervals li:nth-child(1), .fb-profile-intervals li:nth-child(2) {
-    padding-bottom: 8px;
-  }
-  .fb-profile-intervals button {
-    all: unset;
-    cursor: pointer;
   }
   
   .fb-ico-bg {
@@ -174,9 +168,9 @@
             </li>
           </ul>
           <ul class="fb-profile-intervals grid-padding">
-            <li><button name="daily" type="submit">Daily</button></li>
-            <li><button name="weekly" type="submit">Weekly</button></li>
-            <li><button name="monthly" type="submit">Monthly</button></li>
+            <li>Daily</li>
+            <li>Weekly</li>
+            <li>Monthly</li>
           </ul>
         </div>
       </div>
@@ -184,48 +178,72 @@
         <div class="fb-ico-bg"><img src="images/icon-work.svg"/></div>
         <ul class="fb-action fb-work grid-padding"> 
           <li class="get-action-title">Work</li>
-          <li class="gat-action-timeframe"></li>
-          <li class="gat-action-timeframe-prev">Previous - <span></span></li>
+          <li class="get-action-daily">5hrs <!-- daily --></li>
+          <li class="get-action-daily-prev">Previous - 7hrs <!-- daily --></li>
+          <li class="get-action-weekly">32hrs <!-- weekly --></li>
+          <li class="get-action-weekly-prev">Previous - 36hrs <!-- weekly --></li>
+          <li class="get-action-monthly">103hrs <!-- monthly --></li>
+          <li class="get-action-monthly-prev">Previous - 128hrs <!-- monthly --></li>
         </ul>
       </div>
       <div id="play" class="grid-element">
         <div class="fb-ico-bg"><img src="images/icon-play.svg"></div>
         <ul class="fb-action fb-play grid-padding">
           <li class="get-action-title">Play</li>
-          <li class="gat-action-timeframe"></li>
-          <li class="gat-action-timeframe-prev"> Previous - <span></span> <!-- daily --></li>
+          <li class="get-action-daily">1hr <!-- daily --></li>
+          <li class="get-action-daily-prev"> Previous - 2hrs <!-- daily --></li>
+          <li class="get-action-weekly">10hrs <!-- weekly --></li>
+          <li class="get-action-weekly-prev">Previous - 8hrs <!-- weekly --></li>
+          <li class="get-action-monthly">23hrs <!-- monthly --></li>
+          <li class="get-action-monthly-prev">Previous - 29hrs <!-- monthly --></li>
         </ul>
       </div>
       <div id="study" class="grid-element">
         <div class="fb-ico-bg"><img src="images/icon-study.svg"></div>
         <ul class="fb-action fb-study grid-padding">
           <li class="get=action-type">Study</li>
-          <li class="gat-action-timeframe"></li>
-          <li class="gat-action-timeframe-prev">Previous - <span></span></li>
+          <li class="get-action-daily">0hrs <!-- daily --></li>
+          <li class="get-action-daily-prev">Previous - 1hr <!-- daily --></li>
+          <li class="get-action-weekly">4hrs <!-- weekly --></li>
+          <li class="get-action-weekly-prev">Previous - 7hrs <!-- weekly --></li>
+          <li class="get-action-monthly">13hrs <!-- monthly --></li>
+          <li class="get-action-monthly-prev">Previous - 19hrs <!-- monthly --></li>
         </ul>
       </div>
       <div id="exercise" class="grid-element">
         <div class="fb-ico-bg"><img src="images/icon-exercise.svg"></div>
         <ul class="fb-action fb-exercise grid-padding">
           <li class="get-action-title">Exercise</li>
-          <li class="gat-action-timeframe"></li>
-          <li class="gat-action-timeframe-prev">Previous - <span></span></li>
+          <li class="get-action-daily">1hr <!-- daily --></li>
+          <li class="get-action-daily-prev">Previous - 1hr <!-- daily --></li>
+          <li class="get-action-weekly">4hrs <!-- weekly --></li>
+          <li class="get-action-weekly-prev">Previous - 5hrs <!-- weekly --></li>
+          <li class="get-action-monthly">11hrs <!-- monthly --></li>
+          <li class="get-action-monthly-prev">Previous - 18hrs <!-- monthly --></li>
         </ul>
       </div>
       <div id="social" class="grid-element">
         <div class="fb-ico-bg"><img src="images/icon-social.svg"></div>
         <ul class="fb-action fb-social grid-padding">
           <li class="get-action-title">Social</li>
-          <li class="gat-action-timeframe"></li>
-          <li class="gat-action-timeframe-prev">Previous - <span></span></li>
+          <li class="get-action-daily">1hr <!-- daily --></li>
+          <li class="get-action-daily-prev">Previous - 3hrs <!-- daily --></li>
+          <li class="get-action-weekly">5hrs <!-- weekly --></li>
+          <li class="get-action-weekly-prev">Previous - 10hrs <!-- weekly --></li>
+          <li class="get-action-monthly">21hrs <!-- monthly --></li>
+          <li class="get-action-monthly-prev">Previous - 23hrs <!-- monthly --></li>
         </ul>
       </div>
       <div id="self-care" class="grid-element">
         <div class="fb-ico-bg"><img src="images/icon-self-care.svg"></div>
         <ul class="fb-action fb-self-care grid-padding">
           <li class="get-action-title">Self Care</li>
-          <li class="gat-action-timeframe"></li>
-          <li class="gat-action-timeframe-prev">Previous - <span></span></li>
+          <li class="get-action-daily">0hrs <!-- daily --></li>
+          <li class="get-action-daily-prev">Previous - 1hr <!-- daily --></li>
+          <li class="get-action-weekly">2hrs <!-- weekly --></li>
+          <li class="get-action-weekly-prev">Previous - 2hrs <!-- weekly --></li>
+          <li class="get-action-monthly">7hrs <!-- monthly --></li>
+          <li class="get-action-monthly-prev">Previous - 11hrs <!-- monthly --></li>
         </ul>
       </div>
     </div>
