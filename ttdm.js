@@ -11,18 +11,17 @@ function ttdmShowTimeframes(ttdmGetButtonNameCallback) {
     switch(buttonName) {
         case "daily": {
             var buttonActionClass = document.getElementsByClassName("get-action-title");
-            for (let i = 0; i <= buttonActionClass.length; i++) {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var myObj = JSON.parse(this.responseText);
-                    document.getElementById(buttonName).innerHTML = myObj.data.name;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                for (let i = 0; i <= buttonActionClass.length; i++) {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var myObj = JSON.parse(this.responseText);
+                        document.getElementById(buttonName).innerHTML = myObj.data.name;
+                    }
                 }
-            }
+            };
+            xmlhttp.open("GET", "data.json", true);
+            xmlhttp.send();
             }   
         }
-    };
-    xmlhttp.open("GET", "data.json", true);
-    xmlhttp.send();
-    }
 }
