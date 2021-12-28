@@ -9,7 +9,7 @@ function ttdmGetJson() {
                 document.getElementById(thisId).innerHTML = myObj.data.name;
             }
     };
-    xmlhttp.open("GET", "data.json", true);
+    xmlhttp.open("POST", "data.json", true);
     xmlhttp.send();
 }
 
