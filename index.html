@@ -230,10 +230,21 @@
       </div>
     </div>
   </main>
+  <!--<script src="ttdm.js"></script>-->
+  <script>
+    function ttdmGetJson(myTarg, myId) {
+    console.log("You clicked" + myId);
+    }
+    function ttdmTfClicked() {
+	    var prl = document.getElementsByClassName("fb-profile-intervals")[0].getElementsByTagName("input");
+	    for(let i = 0; i <= prl.length; i++) {
+        prl[i].addEventListener("click", function() {alert("You clicked " + prl[i].id)});
+	    }
+    }
+    </script>
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </footer>
-  <script src="ttdm.js"></script>
 </body>
 </html>
