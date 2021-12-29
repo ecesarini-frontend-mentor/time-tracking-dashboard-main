@@ -1,8 +1,12 @@
 function ttdmGetJson() {
     var thisId = this.id;
+    $.getJSON('data.json', function(data) {
+        //do stuff with your data here
+        document.getElementById(thisId).innerHTML = data.name;
+    });
 	//myTarg.innerHtml = "You clicked " + myId;
     //alert("You clicked " + thisId);
-	var xmlhttp = new XMLHttpRequest();
+	/*var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
@@ -10,7 +14,7 @@ function ttdmGetJson() {
             }
     };
     xmlhttp.open("POST", "data.json", true);
-    xmlhttp.send();
+    xmlhttp.send();*/
 }
 
 function ttdmTfClicked() {
