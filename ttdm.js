@@ -2,7 +2,7 @@ function ttdmGetJson() {
     var thisId = this.id;
     $.getJSON('data.json', function(data) {
         //do stuff with your data here
-        document.getElementById(thisId).innerHTML = data.name;
+        //document.getElementById(thisId).innerHTML = data.name;
     });
 	//myTarg.innerHtml = "You clicked " + myId;
     //alert("You clicked " + thisId);
