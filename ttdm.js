@@ -1,12 +1,19 @@
 function ttdmGetJson() {
     var thisId = this.id;
+    var action = document.getElementsByClassName("fb-action");
+    //var target = document.getElementsByClassName("")
+    //console.log(thisId);
     $.getJSON('data.json', function(data) {
         //do stuff with your data here
-        document.getElementById(thisId).innerHTML = data.name;
+        for(let i = 0; i <= action.length; i++) {
+            
+        }
+        //document.getElementById(thisId).innerHTML = data.name;
+        //console.log(data);
     });
 	//myTarg.innerHtml = "You clicked " + myId;
     //alert("You clicked " + thisId);
-	/*var xmlhttp = new XMLHttpRequest();
+	/* var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
@@ -14,7 +21,7 @@ function ttdmGetJson() {
             }
     };
     xmlhttp.open("POST", "data.json", true);
-    xmlhttp.send();*/
+    xmlhttp.send(); */
 }
 
 function ttdmTfClicked() {
