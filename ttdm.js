@@ -1,37 +1,30 @@
-function ttdmGetJson() {
-    var thisId = this.id;
-    var action = document.getElementsByClassName("fb-action");
-    //var target = document.getElementsByClassName("")
-    //console.log(thisId);
+function ttdmGetJson(callback) {
     $.getJSON('data.json', function(data) {
-        //do stuff with your data here
-        for(let i = 0; i <= action.length; i++) {
-            
-        }
-        //document.getElementById(thisId).innerHTML = data.name;
-        //console.log(data);
+        return callback(data['return']);
     });
-	//myTarg.innerHtml = "You clicked " + myId;
-    //alert("You clicked " + thisId);
-	/* var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var myObj = JSON.parse(this.responseText);
-                document.getElementById(thisId).innerHTML = myObj.data.name;
-            }
-    };
-    xmlhttp.open("POST", "data.json", true);
-    xmlhttp.send(); */
+}
+
+$(function ttdmDailyAction() {
+    //$.getJSON('data.json', function(data) {
+    var actionClass = document.getElementsByClassName("fb-action");
+    const ttdmJson = ttdmGetJson(data);
+        for(let i = 0; i <= actionClass.length; i++) {
+            let actionFields = actionClass[i].childNodes;
+            actionFields[0].innerHtml = data[i].title;
+            actionFields[1].innerHtml = data[i].timeframes.daily.current + "hrs";
+            actionFields[2].innerHtml = "Yesterday - " + data[i].timeframes.daily.previous;
+        }
+    //});
+});
+
+function ttdmUpdateAction() {
+    const ttdmJson = ttdmGetJson();
 }
 
 function ttdmTfClicked() {
 	document.getElementsByClassName("fb-profile-intervals")[0].querySelectorAll("input")
-    .forEach(item => item.addEventListener("click", ttdmGetJson));
-    //.forEach(item => item.addEventListener("click", function() {alert("You clicked " + item.id)} ));
-    /*for(let i = 0; i <= prl.length; i++) {
-		//prl[i].addEventListener("click", ttdmGetJson( prl[i], prl[i].id ));
-        prl[i].addEventListener("click", function() {alert("You clicked " + prl[i].id)});
-	}*/
+    .forEach(item => item.addEventListener("click", ttdmUpdateAction));
 }
 
-ttdmTfClicked();
+ttdmDailyAction();
+//ttdmTfClicked();
