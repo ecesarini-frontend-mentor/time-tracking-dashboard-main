@@ -1,145 +1,164 @@
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 :root {
---blue: hsl(246, 80%, 60%);
---light-red-work: hsl(15, 100%, 70%);
---soft-blue-play: hsl(195, 74%, 62%);
---light-red-study: hsl(348, 100%, 68%);
---lime-green-exercise: hsl(145, 58%, 55%);
---violet-social: hsl(264, 64%, 52%);
---soft-orange-self-care: hsl(43, 84%, 65%);
---very-dark-blue: hsl(226, 43%, 10%);
---dark-blue: hsl(235, 46%, 20%);
---desaturated-blue: hsl(235, 45%, 61%);
---pale-blue: hsl(236, 100%, 87%);
+    --blue: hsl(246, 80%, 60%);
+    --light-red-work: hsl(15, 100%, 70%);
+    --soft-blue-play: hsl(195, 74%, 62%);
+    --light-red-study: hsl(348, 100%, 68%);
+    --lime-green-exercise: hsl(145, 58%, 55%);
+    --violet-social: hsl(264, 64%, 52%);
+    --soft-orange-self-care: hsl(43, 84%, 65%);
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
 
---border-radius: 15px;
---view-width: 1440px;
---view-height: 1024px;
+    --border-radius: 15px;
+    --view-width: 1440px;
+    --view-height: 1024px;
 }
 html {
-box-sizing: border-box;
-height: var(--view-height);
-margin: 0;
-padding: 0;
-border: 0;
+    box-sizing: border-box;
+    height: var(--view-height);
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 body {
-margin: 0 auto;
-background-color: var(--very-dark-blue);
-height: 100%;
+    margin: 0 auto;
+    background-color: var(--very-dark-blue);
+    height: 100%;
 }
 main {
-height: 100%;
-font-family: 'Rubik', sans-serif;
-font-size: 18px;
-font-weight: 300;
-color: white;
-width: var(--view-width);
-max-width: var(--view-weight);
+    height: 100%;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    width: var(--view-width);
+    max-width: var(--view-weight);
 }
 ul {
-list-style: none;
-margin: 0;
+    list-style: none;
+    margin: 0;
 }
 
 .grid-container {
-margin: calc( .21*var(--view-height)) 11%;
-display: grid;
-grid-template-rows: 1fr 1fr;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-gap: 1vh 3vw;
+    margin: calc( .21*var(--view-height)) 11%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1vh 3vw;
 }
 .grid-element.grid-element-profile {
-background-color: var(--dark-blue);
-border-radius: var(--border-radius);
+    background-color: var(--dark-blue);
+    border-radius: var(--border-radius);
 }
 .grid-padding {
-padding: 20px;
+    padding: 20px;
 }
 .grid-element-profile {
-grid-row: 1 / 3;
+    grid-row: 1 / 3;
+}
+.grid-element-action {
+    height: 100%;
+    min-height: 100%;
 }
 
 .fb-profile {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .fb-profile .fb-profile-avatar {
-display: flex;
-flex-direction: column;
-flex-basis: 5%;
-justify-content: space-around;
-background-color: var(--blue);
-border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    flex-basis: 5%;
+    justify-content: space-around;
+    background-color: var(--blue);
+    border-radius: var(--border-radius);
 }
 .fb-profile-avatar li img {
-max-width: 40%;
-border: 2px solid white;
-border-radius: 50px 50px;
+    max-width: 40%;
+    border: 2px solid white;
+    border-radius: 50px 50px;
 }
 .fb-profile-avatar li p:nth-child(1) {
-color: var(--pale-blue);
-font-size: 3vh;
+    color: var(--pale-blue);
+    font-size: 3vh;
 }
 .fb-profile-avatar li p:nth-child(2) {
-font-size: 8vh;
-margin-top: -10px;
+    font-size: 8vh;
+    margin-top: -10px;
 }
 .fb-profile .fb-profile-intervals {
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 .fb-profile .fb-profile-intervals li {
-font-size: 18px;
-color: var(--desaturated-blue);
+    font-size: 18px;
+    color: var(--desaturated-blue);
 }
 .fb-profile-intervals li:nth-child(1), .fb-profile-intervals li:nth-child(2) {
-padding-bottom: 8px;
+    padding-bottom: 8px;
 }
 .fb-profile-intervals input {
-all: unset;
-cursor: pointer;
+    all: unset;
+    cursor: pointer;
 }
 
 .fb-ico-bg {
-position: relative;
-height: 30%;
-border-radius: var(--border-radius) var(--border-radius) 0 0;
-overflow: hidden;
-vertical-align: middle;
+    position: relative;
+    height: 30%;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    overflow: hidden;
+    vertical-align: middle;
 }
 #work .fb-ico-bg {
-background-color: var(--light-red-work);
+    background-color: var(--light-red-work);
 }
 #play .fb-ico-bg {
-background-color: var(--soft-blue-play);
+    background-color: var(--soft-blue-play);
 }
 #study .fb-ico-bg {
-background-color: var(--light-red-study);
+    background-color: var(--light-red-study);
 }
 #exercise .fb-ico-bg {
-background-color: var(--lime-green-exercise);
+    background-color: var(--lime-green-exercise);
 }
 #social .fb-ico-bg {
-background-color: var(--violet-social);
+    background-color: var(--violet-social);
 }
 #self-care .fb-ico-bg {
-background-color: var(--soft-orange-self-care);
+    background-color: var(--soft-orange-self-care);
 }
 
 .fb-ico-bg img {
-width: 25%;
-float: right;
-margin: -10px 20px 0 0;
+    width: 25%;
+    float: right;
+    margin: -10px 20px 0 0;
 }
+
 .fb-action {    
-position: relative;
-top: -15px;
-display: flex;
-flex-direction: column;
-background-color: var(--dark-blue);
-border-radius: 10px 10px var(--border-radius) var(--border-radius);
-overflow: hidden;
+    position: relative;
+    top: -15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--dark-blue);
+    border-radius: 10px 10px var(--border-radius) var(--border-radius);
+    overflow: hidden;
+}
+.fb-action .get-action-title {
+    flex-basis: 25%;
+    font-size: 3vh;
+}
+.fb-action .get-action-timeframe {
+    flex-basis: 50%;
+    font-size: 7vh;
+}
+.fb-action .get-action-timeframe-prev {
+    flex-basis: 25%;
+    font-size: 2.5vh;
+    color: var(--desaturated-blue);
 }

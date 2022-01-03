@@ -1,24 +1,38 @@
-function ttdmGetJson(callback) {
+function ttdmDailyAction() {
     $.getJSON('data.json', function(data) {
-        return callback(data['return']);
+    var actionClass = document.getElementsByClassName("fb-action");
+        for(let i = 0; i < actionClass.length; i++) {
+            let actionFields = actionClass[i].getElementsByTagName("li");
+            actionFields[0].innerText = data[i].title;
+            actionFields[1].innerText = data[i].timeframes.daily.current + "hrs";
+            actionFields[2].innerText = "Yesterday - " + data[i].timeframes.daily.previous + "hrs";
+        }
     });
 }
 
-$(function ttdmDailyAction() {
-    //$.getJSON('data.json', function(data) {
-    var actionClass = document.getElementsByClassName("fb-action");
-    const ttdmJson = ttdmGetJson(data);
-        for(let i = 0; i <= actionClass.length; i++) {
-            let actionFields = actionClass[i].childNodes;
-            actionFields[0].innerHtml = data[i].title;
-            actionFields[1].innerHtml = data[i].timeframes.daily.current + "hrs";
-            actionFields[2].innerHtml = "Yesterday - " + data[i].timeframes.daily.previous;
-        }
-    //});
-});
-
 function ttdmUpdateAction() {
-    const ttdmJson = ttdmGetJson();
+    var actionType = this.id;
+    $.getJSON('data.json', function(data){
+    var actionClass = document.getElementsByClassName("fb-action");
+        for(let i = 0; i < actionClass.length; i++) {
+            let actionFields = actionClass[i].getElementsByTagName("li");
+            actionFields[0].innerText = data[i].title;
+            switch (actionType) {
+                case "profile-daily-clicked":
+                    actionFields[1].innerText = data[i].timeframes.daily.current + "hrs";
+                    actionFields[2].innerText = "Yesterday - " + data[i].timeframes.daily.previous + "hrs";
+                    break;
+                case "profile-weekly-clicked":
+                    actionFields[1].innerText = data[i].timeframes.weekly.current + "hrs";
+                    actionFields[2].innerText = "Last Week - " + data[i].timeframes.weekly.previous + "hrs";
+                    break;
+                case "profile-monthly-clicked":
+                    actionFields[1].innerText = data[i].timeframes.monthly.current + "hrs";
+                    actionFields[2].innerText = "Last Month - " + data[i].timeframes.monthly.previous + "hrs";
+                    break;
+            }
+        }        
+    });
 }
 
 function ttdmTfClicked() {
@@ -27,4 +41,4 @@ function ttdmTfClicked() {
 }
 
 ttdmDailyAction();
-//ttdmTfClicked();
+ttdmTfClicked();
