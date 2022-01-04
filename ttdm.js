@@ -1,6 +1,6 @@
 function ttdmDailyAction() {
     $.getJSON('data.json', function(data) {
-    var actionClass = document.getElementsByClassName("fb-action");
+    var actionClass = document.getElementsByClassName("fb-action-timeframes");
         for(let i = 0; i < actionClass.length; i++) {
             let actionFields = actionClass[i].getElementsByTagName("li");
             actionFields[0].innerText = data[i].title;
@@ -11,9 +11,10 @@ function ttdmDailyAction() {
 }
 
 function ttdmUpdateAction() {
+    this.style.color = "white";
     var actionType = this.id;
     $.getJSON('data.json', function(data){
-    var actionClass = document.getElementsByClassName("fb-action");
+    var actionClass = document.getElementsByClassName("fb-action-timeframes");
         for(let i = 0; i < actionClass.length; i++) {
             let actionFields = actionClass[i].getElementsByTagName("li");
             actionFields[0].innerText = data[i].title;
@@ -36,8 +37,9 @@ function ttdmUpdateAction() {
 }
 
 function ttdmTfClicked() {
+    var isClicked = true;
 	document.getElementsByClassName("fb-profile-intervals")[0].querySelectorAll("input")
-    .forEach(item => item.addEventListener("click", ttdmUpdateAction));
+    .forEach(item => item.addEventListener("click", ttdmUpdateAction, true));
 }
 
 ttdmDailyAction();
