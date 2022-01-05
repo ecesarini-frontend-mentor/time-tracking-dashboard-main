@@ -11,7 +11,8 @@ function ttdmDailyAction() {
 }
 
 function ttdmUpdateAction() {
-    this.style.color = "white";
+    // if( !$(this).on("click") ) {this.style.color = "";}    -> check jQuery
+    // this.style.color = "white";
     var actionType = this.id;
     $.getJSON('data.json', function(data){
     var actionClass = document.getElementsByClassName("fb-action-timeframes");
