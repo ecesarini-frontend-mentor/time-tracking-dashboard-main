@@ -47,16 +47,22 @@ body {
 }
 main {
     height: 100%;
+    margin: 0 auto;
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
     font-weight: 300;
     color: white;
     width: var(--view-width);
-    max-width: var(--view-weight);
+    max-width: var(--view-width);
 }
 ul {
     list-style: none;
     margin: 0;
+}
+button {
+  border: none;
+  background: none;
+  margin: auto;
 }
 
 .grid-container {
@@ -112,15 +118,15 @@ ul {
     font-size:3vh;
     color: var(--desaturated-blue);
 }
-/*.fb-profile .fb-profile-intervals li:focus {
-    color: white;
-}*/
 .fb-profile-intervals li:nth-child(1), .fb-profile-intervals li:nth-child(2) {
     padding-bottom: 8px;
 }
 .fb-profile-intervals input {
     all: unset;
     cursor: pointer;
+}
+.fb-profile-intervals input:focus {
+  color: white;
 }
 
 .fb-action {
@@ -135,7 +141,7 @@ ul {
 
 .fb-ico-bg {
     position: relative;
-    height: 30%;
+    height: 20%;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     overflow: hidden;
     vertical-align: middle;
@@ -179,9 +185,20 @@ ul {
     flex-basis: 25%;
     font-size: 3vh;
 }
+.fb-action-timeframes .get-action-title button {
+  float: right;
+}
+.fb-action-timeframes .get-action-title button:hover {
+  cursor: pointer;
+}
+
+.fb-action-timeframes .get-action-title button img {
+  padding: 0;
+}
+
 .fb-action-timeframes .get-action-timeframe {
     flex-basis: 50%;
-    font-size: 4em;
+    font-size: 3.9rem;
 }
 .fb-action-timeframes .get-action-timeframe-prev {
     flex-basis: 25%;
@@ -214,7 +231,10 @@ ul {
         <div class="fb-action">
           <div class="fb-ico-bg"><img src="images/icon-work.svg"/></div>
             <ul class="fb-action-timeframes fb-work grid-padding"> 
-              <li class="get-action-title">Study</li>
+              <li class="get-action-title">
+                <span></span>
+                <button type="button"><img src="images/icon-ellipsis.svg"></button>
+              </li>
               <li class="get-action-timeframe">1hrs</li>
               <li class="get-action-timeframe-prev">Yesterday - 1hrs</li>
             </ul>
@@ -224,7 +244,10 @@ ul {
         <div class="fb-action">
           <div class="fb-ico-bg"><img src="images/icon-play.svg"></div>
           <ul class="fb-action-timeframes fb-play grid-padding">
-            <li class="get-action-title"></li>
+            <li class="get-action-title">
+              <span></span>
+              <button type="button"><img src="images/icon-ellipsis.svg"></button>
+            </li>
             <li class="get-action-timeframe"></li>
             <li class="get-action-timeframe-prev"> <!-- daily --></li>
           </ul>
@@ -234,7 +257,10 @@ ul {
         <div class="fb-action">
           <div class="fb-ico-bg"><img src="images/icon-study.svg"></div>
             <ul class="fb-action-timeframes fb-study grid-padding">
-              <li class="get-action-title"></li>
+              <li class="get-action-title">
+                <span></span>
+                <button type="button"><img src="images/icon-ellipsis.svg"></button>
+              </li>
               <li class="get-action-timeframe"></li>
               <li class="get-action-timeframe-prev"></li>
             </ul>
@@ -244,7 +270,10 @@ ul {
         <div class="fb-action">
           <div class="fb-ico-bg"><img src="images/icon-exercise.svg"></div>
             <ul class="fb-action-timeframes fb-exercise grid-padding">
-              <li class="get-action-title">Exercise</li>
+              <li class="get-action-title">
+                <span></span>
+                <button type="button"><img src="images/icon-ellipsis.svg"></button>
+              </li>
               <li class="get-action-timeframe">5hrs</li>
               <li class="get-action-timeframe-prev">Yesterday - 7hrs</li>
             </ul>
@@ -254,7 +283,10 @@ ul {
         <div class="fb-action">
           <div class="fb-ico-bg"><img src="images/icon-social.svg"></div>
             <ul class="fb-action-timeframes fb-social grid-padding">
-              <li class="get-action-title"></li>
+              <li class="get-action-title">
+                <span></span>
+                <button type="button"><img src="images/icon-ellipsis.svg"></button>
+              </li>
               <li class="get-action-timeframe"></li>
               <li class="get-action-timeframe-prev"></li>
             </ul>
@@ -264,7 +296,10 @@ ul {
         <div class="fb-action">
             <div class="fb-ico-bg"><img src="images/icon-self-care.svg"></div>
             <ul class="fb-action-timeframes fb-self-care grid-padding">
-              <li class="get-action-title"></li>
+              <li class="get-action-title">
+                <span></span>
+                <button type="button"><img src="images/icon-ellipsis.svg"></button>
+              </li>
               <li class="get-action-timeframe"></li>
               <li class="get-action-timeframe-prev"></li>
             </ul>

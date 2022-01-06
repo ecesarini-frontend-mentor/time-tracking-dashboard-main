@@ -3,7 +3,7 @@ function ttdmDailyAction() {
     var actionClass = document.getElementsByClassName("fb-action-timeframes");
         for(let i = 0; i < actionClass.length; i++) {
             let actionFields = actionClass[i].getElementsByTagName("li");
-            actionFields[0].innerText = data[i].title;
+            actionFields[0].getElementsByTagName("span")[0].innerText = data[i].title;
             actionFields[1].innerText = data[i].timeframes.daily.current + "hrs";
             actionFields[2].innerText = "Yesterday - " + data[i].timeframes.daily.previous + "hrs";
         }
@@ -11,14 +11,12 @@ function ttdmDailyAction() {
 }
 
 function ttdmUpdateAction() {
-    // if( !$(this).on("click") ) {this.style.color = "";}    -> check jQuery
-    // this.style.color = "white";
     var actionType = this.id;
     $.getJSON('data.json', function(data){
     var actionClass = document.getElementsByClassName("fb-action-timeframes");
         for(let i = 0; i < actionClass.length; i++) {
             let actionFields = actionClass[i].getElementsByTagName("li");
-            actionFields[0].innerText = data[i].title;
+            actionFields[0].getElementsByTagName("span")[0].innerText = data[i].title;
             switch (actionType) {
                 case "profile-daily-clicked":
                     actionFields[1].innerText = data[i].timeframes.daily.current + "hrs";
@@ -38,9 +36,8 @@ function ttdmUpdateAction() {
 }
 
 function ttdmTfClicked() {
-    var isClicked = true;
-	document.getElementsByClassName("fb-profile-intervals")[0].querySelectorAll("input")
-    .forEach(item => item.addEventListener("click", ttdmUpdateAction, true));
+    //var isClicked = true;
+	document.getElementsByClassName("fb-profile-intervals")[0].querySelectorAll("input").forEach(item => item.addEventListener("click", ttdmUpdateAction, true));
 }
 
 ttdmDailyAction();
