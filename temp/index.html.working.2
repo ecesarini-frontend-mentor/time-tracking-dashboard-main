@@ -182,41 +182,18 @@ button {
     overflow: hidden;
 }
 .fb-action-timeframes .get-action-title {
-    display: flex;
-    justify-content: space-between;
     flex-basis: 25%;
+    font-size: 3vh;
 }
-.fb-action-timeframes .get-action-title .action-title {
-  font-size: 3vh;
+.fb-action-timeframes .get-action-title button {
+  float: right;
 }
-
-.action-dropdown {
-  position: relative;
-}
-.action-dropdown .action-dropbtn:hover {
+.fb-action-timeframes .get-action-title button:hover {
   cursor: pointer;
 }
-.action-dropdown-content {
-  display: none;
-  position: absolute;
-  /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
-  z-index: 1;
-}
 
-.action-dropdown:hover .action-dropdown-content { 
-  position: absolute;
-  right: 1px;
-  display: flex;
-  flex-direction: column;
-}
-.action-dropdown-timeframe:hover {
-  cursor: pointer;
-  color: var(--desaturated-blue);
-  font-weight: 700;
-}
-.action-dropdown-timeframe {
-  color: white;
-  padding: 10px 0;
+.fb-action-timeframes .get-action-title button img {
+  padding: 0;
 }
 
 .fb-action-timeframes .get-action-timeframe {
@@ -255,15 +232,8 @@ button {
           <div class="fb-ico-bg"><img src="images/icon-work.svg"/></div>
             <ul class="fb-action-timeframes fb-work grid-padding"> 
               <li class="get-action-title">
-                <div class="action-title">Work</div>
-                <div class="action-dropdown">
-                  <button class="action-dropbtn"><img src="images/icon-ellipsis.svg"></button>
-                  <div class="action-dropdown-content">
-                    <button class="action-dropdown-timeframe" type="button">Daily</button>
-                    <button class="action-dropdown-timeframe" type="button">Weekly</button>
-                    <button class="action-dropdown-timeframe" type="button">Monthly</button>
-                  </div>
-                </div>
+                <span></span>
+                <button type="button"><img src="images/icon-ellipsis.svg"></button>
               </li>
               <li class="get-action-timeframe">1hrs</li>
               <li class="get-action-timeframe-prev">Yesterday - 1hrs</li>
@@ -275,15 +245,8 @@ button {
           <div class="fb-ico-bg"><img src="images/icon-play.svg"></div>
           <ul class="fb-action-timeframes fb-play grid-padding">
             <li class="get-action-title">
-              <div class="action-title"></div>
-              <div class="action-dropdown">
-                <button class="action-dropbtn"><img src="images/icon-ellipsis.svg"></button>
-                <div class="action-dropdown-content">
-                  <button class="action-dropdown-timeframe" type="button">Daily</button>
-                  <button class="action-dropdown-timeframe" type="button">Weekly</button>
-                  <button class="action-dropdown-timeframe" type="button">Monthly</button>
-                </div>
-              </div>
+              <span></span>
+              <button type="button"><img src="images/icon-ellipsis.svg"></button>
             </li>
             <li class="get-action-timeframe"></li>
             <li class="get-action-timeframe-prev"> <!-- daily --></li>
@@ -295,15 +258,8 @@ button {
           <div class="fb-ico-bg"><img src="images/icon-study.svg"></div>
             <ul class="fb-action-timeframes fb-study grid-padding">
               <li class="get-action-title">
-                <div class="action-title"></div>
-                <div class="action-dropdown">
-                  <button class="action-dropbtn"><img src="images/icon-ellipsis.svg"></button>
-                  <div class="action-dropdown-content">
-                    <button class="action-dropdown-timeframe" type="button">Daily</button>
-                    <button class="action-dropdown-timeframe" type="button">Weekly</button>
-                    <button class="action-dropdown-timeframe" type="button">Monthly</button>
-                  </div>
-                </div>
+                <span></span>
+                <button type="button"><img src="images/icon-ellipsis.svg"></button>
               </li>
               <li class="get-action-timeframe"></li>
               <li class="get-action-timeframe-prev"></li>
@@ -315,15 +271,8 @@ button {
           <div class="fb-ico-bg"><img src="images/icon-exercise.svg"></div>
             <ul class="fb-action-timeframes fb-exercise grid-padding">
               <li class="get-action-title">
-                <div class="action-title"></div>
-                <div class="action-dropdown">
-                  <button class="action-dropbtn"><img src="images/icon-ellipsis.svg"></button>
-                  <div class="action-dropdown-content">
-                    <button class="action-dropdown-timeframe" type="button">Daily</button>
-                    <button class="action-dropdown-timeframe" type="button">Weekly</button>
-                    <button class="action-dropdown-timeframe" type="button">Monthly</button>
-                  </div>
-                </div>
+                <span></span>
+                <button type="button"><img src="images/icon-ellipsis.svg"></button>
               </li>
               <li class="get-action-timeframe">5hrs</li>
               <li class="get-action-timeframe-prev">Yesterday - 7hrs</li>
@@ -335,15 +284,8 @@ button {
           <div class="fb-ico-bg"><img src="images/icon-social.svg"></div>
             <ul class="fb-action-timeframes fb-social grid-padding">
               <li class="get-action-title">
-                <div class="action-title"></div>
-                <div class="action-dropdown">
-                  <button class="action-dropbtn"><img src="images/icon-ellipsis.svg"></button>
-                  <div class="action-dropdown-content">
-                    <button class="action-dropdown-timeframe" type="button">Daily</button>
-                    <button class="action-dropdown-timeframe" type="button">Weekly</button>
-                    <button class="action-dropdown-timeframe" type="button">Monthly</button>
-                  </div>
-                </div>
+                <span></span>
+                <button type="button"><img src="images/icon-ellipsis.svg"></button>
               </li>
               <li class="get-action-timeframe"></li>
               <li class="get-action-timeframe-prev"></li>
@@ -355,15 +297,8 @@ button {
             <div class="fb-ico-bg"><img src="images/icon-self-care.svg"></div>
             <ul class="fb-action-timeframes fb-self-care grid-padding">
               <li class="get-action-title">
-                <div class="action-title"></div>
-                <div class="action-dropdown">
-                  <button class="action-dropbtn"><img src="images/icon-ellipsis.svg"></button>
-                  <div class="action-dropdown-content">
-                    <button class="action-dropdown-timeframe" type="button">Daily</button>
-                    <button class="action-dropdown-timeframe" type="button">Weekly</button>
-                    <button class="action-dropdown-timeframe" type="button">Monthly</button>
-                    </div>
-                </div>
+                <span></span>
+                <button type="button"><img src="images/icon-ellipsis.svg"></button>
               </li>
               <li class="get-action-timeframe"></li>
               <li class="get-action-timeframe-prev"></li>
