@@ -60,20 +60,13 @@ function ttdmGridItemUpdateAction() {
     });
 }
 
-function ttdmGridItemUpdateBg() {
-    let ddBgColor = this.closest(".fb-ico-bg").style.backgroundColor;
-    this.style.backgroundColor = ddBgColor;
-}
-
 function ttdmTfClicked() {
 	document.getElementsByClassName("fb-profile-intervals")[0].querySelectorAll("input").forEach(item => item.addEventListener("click", ttdmGlobalUpdateAction, true));
     var actionDropdownClasses = document.getElementsByClassName("action-dropdown-content");
     for(let i = 0; i < actionDropdownClasses.length; i ++) {
-        actionDropdownClasses[i].parentElement.addEventListener("click", ttdmGridItemUpdateBg);
         actionDropdownClasses[i].querySelectorAll("button").forEach(item => item.addEventListener("click", ttdmGridItemUpdateAction));
     }
 }
-
 
 ttdmDailyAction();
 ttdmTfClicked();

@@ -52,8 +52,9 @@ main {
     font-size: 18px;
     font-weight: 300;
     color: white;
-    width: var(--view-width);
-    max-width: var(--view-width);
+    width: 100%;
+    /*width: var(--view-width);
+    max-width: var(--view-width);*/
 }
 ul {
     list-style: none;
@@ -66,7 +67,7 @@ button {
 }
 
 .grid-container {
-    margin: calc( .21*var(--view-height)) 11%;
+    /*margin: calc( .21*var(--view-height)) 11%;*/
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -199,24 +200,31 @@ button {
 .action-dropdown-content {
   display: none;
   position: absolute;
-  /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+  width: 4em;
   z-index: 1;
 }
 
 .action-dropdown:hover .action-dropdown-content { 
   position: absolute;
   right: 1px;
+  margin-right: -0.7em;
   display: flex;
   flex-direction: column;
+  background-color: var(--pale-blue);
+  border: 1px solid var(--desaturated-blue);
+  border-radius: 3px;
+}
+.action-dropdown-timeframe {
+  font-size: 75%;
+  color: var(--desaturated-blue);
+  padding: 10px;
+  font-weight: 500;
 }
 .action-dropdown-timeframe:hover {
   cursor: pointer;
-  color: var(--desaturated-blue);
-  font-weight: 700;
-}
-.action-dropdown-timeframe {
   color: white;
-  padding: 10px 0;
+  font-weight: 700;
+  max-width: 100%;
 }
 
 .fb-action-timeframes .get-action-timeframe {
@@ -228,6 +236,26 @@ button {
     font-size: 2vh;
     color: var(--desaturated-blue);
 }
+
+/* Media Queries */
+@media only screen and (min-width: var(--view-width)) {
+  main {
+    /*width: var(--view-width);
+    max-width: var(--view-width);*/
+    margin: calc( .21*var(--view-height)) 11%;
+  }
+}
+@media only screen and (max-width: calc(var(--view-width) - 1px)) {
+  html {
+    height: 100%;
+    width: 100%;
+  }
+  body {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
   </style>
 </head>
 <body>
