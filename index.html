@@ -43,10 +43,8 @@ html {
 body {
     margin: 0 auto;
     background-color: var(--very-dark-blue);
-    height: 100%;
 }
 main {
-    height: 100%;
     margin: 0 auto;
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
@@ -67,7 +65,7 @@ button {
 }
 
 .grid-container {
-    /*margin: calc( .21*var(--view-height)) 11%;*/
+    margin: 21vh 11vw;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -92,15 +90,15 @@ button {
 .fb-profile .fb-profile-avatar {
     display: flex;
     flex-direction: column;
-    flex-basis: 5%;
+    /*flex-basis: 5%;*/
     justify-content: space-around;
     background-color: var(--blue);
     border-radius: var(--border-radius);
 }
 .fb-profile-avatar li img {
     max-width: 40%;
-    border: 2px solid white;
-    border-radius: 50px 50px;
+    border: 3px solid white;
+    border-radius: 50% 50%;
 }
 .fb-profile-avatar li p:nth-child(1) {
     color: var(--pale-blue);
@@ -116,7 +114,7 @@ button {
     justify-content: space-evenly;
 }
 .fb-profile .fb-profile-intervals li {
-    font-size:3vh;
+    font-size: 3vh;
     color: var(--desaturated-blue);
 }
 .fb-profile-intervals li:nth-child(1), .fb-profile-intervals li:nth-child(2) {
@@ -237,22 +235,38 @@ button {
     color: var(--desaturated-blue);
 }
 
-/* Media Queries */
-@media only screen and (min-width: var(--view-width)) {
-  main {
-    /*width: var(--view-width);
-    max-width: var(--view-width);*/
+@media only screen and (max-width: 1440px) {
+  .grid-container {
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: 1fr;
     margin: calc( .21*var(--view-height)) 11%;
   }
-}
-@media only screen and (max-width: calc(var(--view-width) - 1px)) {
-  html {
-    height: 100%;
-    width: 100%;
+  .grid-element-profile {
+    grid-row: 1 / 2;
   }
-  body {
-    width: 100%;
-    margin: 0 auto;
+  .fb-profile .fb-profile-avatar {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+  }
+  .fb-profile-avatar li img {
+    max-width: initial;
+    width: 80%;
+  }
+  .fb-profile-avatar li {
+    margin: auto;
+  }
+  .fb-profile-avatar li p:nth-child(1) {
+    font-size: 3vw;
+  }
+  .fb-profile-avatar li p:nth-child(2) {
+    font-size: 5vw;
+  }
+  .fb-profile .fb-profile-intervals {
+    flex-direction: row;
+  }
+  .grid-element-profile .fb-profile-intervals  {
+    justify-self: center;
   }
 }
 
