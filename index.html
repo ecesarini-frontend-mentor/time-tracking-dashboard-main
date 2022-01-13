@@ -32,6 +32,8 @@
     --border-radius: 15px;
     --view-width: 1440px;
     --view-height: 1024px;
+    --grid-row-gap: 2.5vh;
+    --grid-column-gap: 3vw;
 }
 html {
     box-sizing: border-box;
@@ -69,7 +71,7 @@ button {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2.5vh 3vw;
+    gap: var(--grid-row-gap) var(--grid-column-gap);
     align-items: stretch;
 }
 .grid-element.grid-element-profile {
@@ -90,7 +92,6 @@ button {
 .fb-profile .fb-profile-avatar {
     display: flex;
     flex-direction: column;
-    /*flex-basis: 5%;*/
     justify-content: space-around;
     background-color: var(--blue);
     border-radius: var(--border-radius);
@@ -180,12 +181,12 @@ button {
     border-radius: 10px 10px var(--border-radius) var(--border-radius);
     overflow: hidden;
 }
-.fb-action-timeframes .get-action-title {
+.get-action-title {
     display: flex;
     justify-content: space-between;
     flex-basis: 25%;
 }
-.fb-action-timeframes .get-action-title .action-title {
+.action-title {
   font-size: 3vh;
 }
 
@@ -225,11 +226,11 @@ button {
   max-width: 100%;
 }
 
-.fb-action-timeframes .get-action-timeframe {
+.get-action-timeframe {
     flex-basis: 50%;
     font-size: 3.9rem;
 }
-.fb-action-timeframes .get-action-timeframe-prev {
+.get-action-timeframe-prev {
     flex-basis: 25%;
     font-size: 2vh;
     color: var(--desaturated-blue);
@@ -239,7 +240,8 @@ button {
   .grid-container {
     grid-template-rows: repeat(8, 1fr);
     grid-template-columns: 1fr;
-    margin: calc( .21*var(--view-height)) 11%;
+    /*margin: calc( .21*var(--view-height)) 11%;*/
+    margin: calc(.21*var(--view-height)) 20%;
   }
   .grid-element-profile {
     grid-row: 1 / 2;
@@ -266,26 +268,45 @@ button {
     flex-direction: row;
     justify-self: center;
   }
+  .fb-action .grid-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   .fb-ico-bg img {
     width: 10vw;
   }
   .fb-action {
     display: block;
   }
-  .fb-action .fb-action-timeframes {    
+  .fb-action-timeframes {    
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     align-items: center;
+    min-height: calc(100% - 2*var(--grid-row-gap));
+  }
+  .action-title {
+    font-size: 1.5em;
   }
   .get-action-title {
     grid-column: 1 / 3;
   }
+  .get-action-timeframe {
+    align-self: start;
+    font-size: 3em;
+  }
   .get-action-timeframe-prev {
+    font-size: 1.2em;
     justify-self: right;
+    align-self: start;
+    padding-top: 10%;
   }
 }
-
+@media only screen and (max-width: 375px){
+  .grid-container{
+    margin: calc( .21*var(--view-height)) 11%;
+  }
+}
   </style>
 </head>
 <body>
