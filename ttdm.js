@@ -1,3 +1,4 @@
+// Get initial timeframes data from local "data.json" file
 function ttdmDailyAction() {
     $.getJSON('data.json', function(data) {
     var actionClass = document.getElementsByClassName("fb-action-timeframes");
@@ -9,7 +10,7 @@ function ttdmDailyAction() {
         }
     });
 }
-
+// Update data when profile timeframes have been clicked
 function ttdmGlobalUpdateAction() {
     var actionType = this.id;
     $.getJSON('data.json', function(data) {
@@ -34,7 +35,7 @@ function ttdmGlobalUpdateAction() {
         }        
     });
 }
-
+// Update data for the specific action when dropdown action button menu has been clicked
 function ttdmGridItemUpdateAction() {
     var actionTypeId = this.closest(".grid-element-action").id;
     var timeFrame = this.innerText.toLowerCase();
@@ -59,14 +60,28 @@ function ttdmGridItemUpdateAction() {
         }
     });
 }
+// Horizontal scrolling by mouse wheel when viewport change and dropdown action menu turns into horizontal list
+/*function ttdmActionDropdownXScroll(adc) {
+        this.preventDefault();
+        adc.scrollLeft += this.deltaY;
+}*/
 
+// Main handler
 function ttdmTfClicked() {
 	document.getElementsByClassName("fb-profile-intervals")[0].querySelectorAll("input").forEach(item => item.addEventListener("click", ttdmGlobalUpdateAction, true));
     var actionDropdownClasses = document.getElementsByClassName("action-dropdown-content");
     for(let i = 0; i < actionDropdownClasses.length; i ++) {
         actionDropdownClasses[i].querySelectorAll("button").forEach(item => item.addEventListener("click", ttdmGridItemUpdateAction));
-    }
+//        actionDropdownClasses[i].addEventListener("wheel", function() { ttdmActionDropdownXScroll(actionDropdownClasses[i]); });
+        actionDropdownClasses[i].addEventListener("wheel", (evt) => {
+            //if($(window).width < "1440px") {
+            evt.preventDefault();
+            actionDropdownClasses[i].scrollLeft += evt.deltaY;
+            //}
+    }); 
+ 
 }
-
+}
+// Functions calls
 ttdmDailyAction();
 ttdmTfClicked();
